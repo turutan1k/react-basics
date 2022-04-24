@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Menu } from './Menu';
 
 export default class CComponent extends Component {
     constructor(props) {
@@ -25,7 +24,7 @@ export default class CComponent extends Component {
         }));
     }
     reset() {
-        this.setState((state) => ({
+        this.setState(() => ({
             count: 0,
         }));
     }
@@ -33,6 +32,7 @@ export default class CComponent extends Component {
     render() {
         return (
             <div>
+            <h1>(Lesson 3) -  State</h1>
                 <button onClick={this.increment}>increment</button>
                 <button onClick={this.decrement}>decrement</button>
                 <button onClick={this.reset}>reset</button>
