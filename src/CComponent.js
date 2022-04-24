@@ -2,14 +2,44 @@ import React, { Component } from 'react';
 import { Menu } from './Menu';
 
 export default class CComponent extends Component {
+    constructor(props) {
+        super(props); //Функция вызывающая род. конструктор
+
+        this.state = {
+            count: 0,
+        };
+
+        this.increment = this.increment.bind(this);
+        this.decrement = this.decrement.bind(this);
+        this.reset = this.reset.bind(this);
+    }
+
+    increment() {
+        this.setState((state) => ({
+            count: state.count + 1,
+        }));
+    }
+    decrement() {
+        this.setState((state) => ({
+            count: state.count - 1,
+        }));
+    }
+    reset() {
+        this.setState((state) => ({
+            count: 0,
+        }));
+    }
+
     render() {
         return (
             <div>
-                <Menu />
-                <h1>CComponent {this.props.name}</h1>
+                <button onClick={this.increment}>increment</button>
+                <button onClick={this.decrement}>decrement</button>
+                <button onClick={this.reset}>reset</button>
+                <h1>Current: {this.state.count}</h1>
             </div>
         );
     }
 }
 
-CComponent.defaultProps = { name: 'Alexey' };
+// CComponent.defaultProps = { name: 'Alexey' };
