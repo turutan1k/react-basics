@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './stylesNew.css';
+import { Button } from '@mui/material';
 
 export default class CComponent extends Component {
     constructor(props) {
@@ -30,12 +32,20 @@ export default class CComponent extends Component {
     }
 
     render() {
+        const styles = {
+            color: 'black',
+            backgroundColor: 'white',
+            padding: '10px',
+            fontSize: '20px',
+        };
         return (
             <div>
-            <h1>(Lesson 3) -  State</h1>
-                <button onClick={this.increment}>increment</button>
-                <button onClick={this.decrement}>decrement</button>
-                <button onClick={this.reset}>reset</button>
+                <h1 className="hello">(Lesson 3) - State</h1>
+                <h1 style={styles}>Hello World</h1>
+
+                <Button onClick={this.increment}>increment</Button>
+                <Button onClick={this.decrement}>decrement</Button>
+                <Button onClick={this.reset}>reset</Button>
                 <h1>Current: {this.state.count}</h1>
             </div>
         );
