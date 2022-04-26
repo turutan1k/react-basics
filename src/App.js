@@ -7,6 +7,7 @@ import ToDoAppComponent from './ToDoAppComponent';
 import FComponent from './FComponent';
 
 import CComponentData from './CComponentData';
+import CcomponentAPI from './CcomponentAPI';
 
 function App() {
     return (
@@ -18,6 +19,10 @@ function App() {
                 <h1>Lesson 6</h1>
 
                 <CComponentData />
+                <h1>
+                    -----------------------------------------------------------
+                </h1>
+                <CcomponentAPI />
 
                 <img src={logo} className="App-logo" alt="logo" />
             </header>
